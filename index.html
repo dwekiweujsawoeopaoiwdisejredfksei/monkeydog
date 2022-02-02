@@ -27,13 +27,13 @@
 
 
 <img class="light_green" src="grass.png">
-<img id="wood" class="dark_wood" src="birch.png">
-<img id="wood" class="light_wood" src="birch.png">
-<img id="wood" class="dark_wood" src="birch.png">
+<img id="woodD" class="dark_wood" src="birch.png">
+<img id="woodL" class="light_wood" src="birch.png">
+<img id="woodD" class="dark_wood" src="birch.png">
 <img class="light_green" src="grass.png">
 <img class="dark_green" src="grass.png">
 <img class="light_green" src="grass.png">
-<img id="wood" class="dark_wood" src="birch.png">
+<img id="woodD" class="dark_wood" src="birch.png">
 <img class="light_green" src="grass.png">
 <img class="dark_green" src="grass.png">
 <img class="light_green" src="grass.png">
@@ -42,9 +42,9 @@
 <img class="dark_green" src="grass.png">
 <img class="light_green" src="grass.png">
 <img class="dark_green" src="grass.png">
-<img id="wood" class="light_wood" src="birch.png">
-<img id="wood" class="dark_wood" src="birch.png">
-<img id="wood" class="light_wood" src="birch.png">
+<img id="woodL" class="light_wood" src="birch.png">
+<img id="woodD" class="dark_wood" src="birch.png">
+<img id="woodL" class="light_wood" src="birch.png">
 <img class="dark_green" src="grass.png">
 <img class="light_green" src="grass.png">
 <img class="dark_green" src="grass.png">
@@ -70,19 +70,25 @@
 <audio id="wood_tap">
 <source src="tap.wav"></source>
 </audio>
+<audio id="wood_nock">
+<source src="UIScrollUp.opus"></source>
+</audio>
 
 <script>
-var inputs = document.querySelectorAll('#wood');
+var inputsD = document.querySelectorAll('#woodD');
+var inputsL = document.querySelectorAll('#woodL');
 var audio = document.querySelector('#wood_tap');
+var audioN = document.querySelector('#wood_nock');
 
-inputs.forEach(function(input) {
+inputsD.forEach(function(input) {
+  input.addEventListener('mouseover', function hover() {
+    audioN.play()
+  });
+});
+
+inputsL.forEach(function(input) {
   input.addEventListener('mouseover', function hover() {
     audio.play()
-  });
-
-  input.addEventListener('mouseleave', function leave() {
-    icon.style.background = '#81D455';
-
   });
 });
 </script>
