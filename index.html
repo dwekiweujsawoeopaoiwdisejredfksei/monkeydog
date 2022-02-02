@@ -72,13 +72,18 @@
 </audio>
 
 <script>
-var div4 = document.querySelector('#wood') 
-var audio = document.querySelector('#wood_tap')
-div4.addEventListener("mouseover", function(){
-audio.play()
-});
-div4.addEventListener("mouseout", function(){
-audio.play()
+var inputs = document.querySelectorAll('#wood');
+var audio = document.querySelector('#wood_tap');
+
+inputs.forEach(function(input) {
+  input.addEventListener('mouseover', function hover() {
+    audio.play()
+  });
+
+  input.addEventListener('mouseleave', function leave() {
+    icon.style.background = '#81D455';
+
+  });
 });
 </script>
 
