@@ -27,13 +27,13 @@
 
 
 <img class="light_green" src="grass.png">
-<img class="dark_wood" src="birch.png">
-<img class="light_wood" src="birch.png">
-<img class="dark_wood" src="birch.png">
+<img id="wood" class="dark_wood" src="birch.png">
+<img id="wood" class="light_wood" src="birch.png">
+<img id="wood" class="dark_wood" src="birch.png">
 <img class="light_green" src="grass.png">
 <img class="dark_green" src="grass.png">
 <img class="light_green" src="grass.png">
-<img class="dark_wood" src="birch.png">
+<img id="wood" class="dark_wood" src="birch.png">
 <img class="light_green" src="grass.png">
 <img class="dark_green" src="grass.png">
 <img class="light_green" src="grass.png">
@@ -42,9 +42,9 @@
 <img class="dark_green" src="grass.png">
 <img class="light_green" src="grass.png">
 <img class="dark_green" src="grass.png">
-<img class="light_wood" src="birch.png">
-<img class="dark_wood" src="birch.png">
-<img class="light_wood" src="birch.png">
+<img id="wood" class="light_wood" src="birch.png">
+<img id="wood" class="dark_wood" src="birch.png">
+<img id="wood" class="light_wood" src="birch.png">
 <img class="dark_green" src="grass.png">
 <img class="light_green" src="grass.png">
 <img class="dark_green" src="grass.png">
@@ -66,6 +66,21 @@
 <img class="dark_green" src="grass.png">
 </div>
 
+
+<audio id="wood_tap">
+<source src="tap.wav"></source>
+</audio>
+
+<script>
+var div4 = document.querySelector('#wood') 
+var audio = document.querySelector('#wood_tap')
+div4.addEventListener("mouseover", function(){
+audio.play()
+});
+div4.addEventListener("mouseout", function(){
+audio.play()
+});
+</script>
 
 <style>
 .light_green {
